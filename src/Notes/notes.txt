@@ -1,0 +1,5 @@
+xs={12}: Isso significa que a coluna ocupará 12 unidades de largura (100% da largura disponível) em telas pequenas (extra small), normalmente dispositivos móveis.
+
+md={6}: Isso significa que a coluna ocupará 6 unidades de largura (50% da largura disponível) em telas médias (medium), que são geralmente tablets e telas maiores.
+
+xl={7}: Isso significa que a coluna ocupará 7 unidades de largura (58,33% da largura disponível) em telas grandes (extra large), que são normalmente telas de desktop muito largas
