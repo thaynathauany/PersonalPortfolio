@@ -5,37 +5,38 @@ import headerImg from '../../assets/img/header-img.svg'
 
 
 export const Banner = () => {
-    const [loopNum, setLoopNum] = useState(0); // controla o número de iterações.
-    const [isDeleting, setIsDeleting] = useState(false); // indica se o texto está sendo apagado.
-    const toRotate = ["Web Developer", "Developer Front-End"]; // array de frases que serão alternadas.
-    const [text, setText] = useState(''); //é o texto atualmente exibido.
-    const [delta, setDelta] = useState(300 - Math.random() * 100); // controla o intervalo entre os caracteres digitados.
+    const [loopNum, setLoopNum] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const toRotate = ["Web Developer", "Developer Front-End"];
+    const [text, setText] = useState('');
+    const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
 
     useEffect(() => {
-        //cria um intervalo que chama a função tick em intervalos aleatórios definidos pelo estado delta
         let ticker = setInterval(() => {
             tick();
         }, delta)
-        return () => { clearInterval(ticker) } //usado para limpar o intervalo quando o componente é desmontado.
-    }, [text]) //useEffect e executado sempre que text for atualizado
+        return () => { clearInterval(ticker) }
+    }, [text])
 
-    const tick = () => { //tick é chamada no intervalo definido por delta
-        let i = loopNum % toRotate.length; // calcula o índice da frase atual a partir do loopNum
-        let fullText = toRotate[i]; // armazena a frase completa.
+    const tick = () => {
+        console.log(loopNum);
+        let fullText = toRotate[loopNum];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length
-            + 1) //é atualizado com o texto que será exibido na próxima iteração.
+            + 1)
         setText(updatedText);
-        if (isDeleting) { //verifica se o texto está sendo apagado
-            setDelta(prevDelta => prevDelta / 2) //divide o valor atual de delta por 2, o que diminui a velocidade de apagamento do texto pela metade.
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2)
         }
-        if (!isDeleting && updatedText === fullText) { //Verifica se o texto não está sendo apagado, ou seja, o texto está sendo digitado e verifica se o texto digitado (updatedText) é igual à frase completa (fullText), o que significa que a frase foi completamente digitada.
-            setIsDeleting(true); // indica que o texto agora deve ser apagado
-            setDelta(period); //Isso faz com que o texto permaneça visível por 2 segundos antes de começar a ser apagado.
-        } else if (isDeleting && updatedText === '') { //Verifica se o texto está sendo apagado, ou seja, o efeito está retrocedendo, apagando caracteres e se o updatedText está vazio, o que significa que toda a frase foi apagada.
-            setIsDeleting(false); //indica que o texto agora deve ser digitado novamente.
-            setLoopNum(loopNum + 1); // incrementa o estado loopNum, que controla qual frase será digitada a seguir.
-            setDelta(500) //faz com que o texto seja digitado em um ritmo mais rápido após a frase ser apagada.
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(period);
+        } else if (isDeleting && updatedText === '') {
+            setIsDeleting(false);
+            if (loopNum === toRotate.length - 1) {
+                setLoopNum(0)
+            } else setLoopNum(loopNum + 1)
+            setDelta(500)
         }
     }
 
