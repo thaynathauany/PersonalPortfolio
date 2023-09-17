@@ -487,6 +487,10 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   text-decoration: none;
   color: inherit;
 }
+.project-link2 {
+  text-decoration: underline;
+  color: inherit;
+}
 
 /************ Projects Css ************/
 .contact {

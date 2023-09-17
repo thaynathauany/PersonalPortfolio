@@ -1,6 +1,7 @@
+import React from "react";
 import { Col } from "react-bootstrap";
 
-export const ProjectCardJS = ({ title, description, imgUrl, link }) => {
+export const ProjectsHTMLeCSS = ({ title, description, imgUrl, link }) => {
     return (
         <Col size={12} sm={6} md={4}>
             <a href={link} target="_blank" className="project-link" rel="noopener noreferrer">
