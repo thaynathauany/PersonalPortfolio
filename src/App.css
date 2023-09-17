@@ -483,6 +483,11 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   z-index: -4;
 }
 
+.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
