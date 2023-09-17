@@ -22,9 +22,11 @@ export const Banner = () => {
     const tick = () => {
         console.log(loopNum);
         let fullText = toRotate[loopNum];
+        console.log(fullText);
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length
             + 1)
         setText(updatedText);
+        console.log(updatedText);
         if (isDeleting) {
             setDelta(prevDelta => prevDelta / 2)
         }
@@ -46,8 +48,8 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{`Hi I'm Thayna.`}<br /> <span className="wrap">{text}</span></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        <h1>{`Hi. I'm Thayná!`}<br /> <span className="wrap">{text}</span></h1>
+                        <p>On this website, I'm gonna show you my projects and cool front-end project ideas. You can find all the projects over on my GitHub. I hope you dig 'em!</p>
                         <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25} /></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
