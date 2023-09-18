@@ -52,7 +52,7 @@ export const Projects = () => {
         },
         {
             title: "Travel backpack",
-            description: "Armazenar dados no navegador",
+            description: "Store data in browser",
             imgUrl: backpack,
             link: "https://mochila-de-viagem-thayna.vercel.app/"
         },
@@ -186,7 +186,7 @@ export const Projects = () => {
                         <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
-                                    <Nav.Link eventKey="first">JavaScript</Nav.Link>
+                                    <Nav.Link eventKey="first">JS</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link eventKey="second">React</Nav.Link>

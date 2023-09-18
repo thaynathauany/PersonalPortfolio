@@ -383,10 +383,15 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
+
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
@@ -400,6 +405,10 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
+
+  @media (max-width: 300px) {
+    font-size: 12px;
+  }
 }
 .project .nav.nav-pills .nav-link::before {
   content: '';
@@ -490,6 +499,10 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
 .project-link2 {
   text-decoration: underline;
   color: inherit;
+}
+
+.navLink {
+  width: 100%;
 }
 
 /************ Projects Css ************/
